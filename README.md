@@ -1,4 +1,4 @@
-# Trabalaho-Simestre-4-gestão-de-qualidade-de-software
+# Trabalho-Simestre-4-gestão-de-qualidade-de-software
 # Supervisor
 -profressor-Thiérs Hofman do Bom Conselho
 # Tabela de conteúdos
