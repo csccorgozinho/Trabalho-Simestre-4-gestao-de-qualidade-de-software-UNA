@@ -1,18 +1,15 @@
 # Trabalaho-Simestre-4-gestão-de-qualidade-de-software
+# Supervisor
+-profressor-Thiérs Hofman do Bom Conselho
 # Tabela de conteúdos
 =================
 <!--ts-->
    * [Sobre](#Sobre)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Instalação](#instalacao)
    * [Características](#Características)
-   * [Pre Requisitos](#pre-requisitos)
    * [Tests](#testes)
+   * [Pre Requisitos](#pre-requisitos)
    * [Tecnologias](#tecnologias)
 <!--te-->
-
-# Supervisor
--profressor-Thiérs Hofman do Bom Conselho
 
 # Recipe App(n e nome final)
 
