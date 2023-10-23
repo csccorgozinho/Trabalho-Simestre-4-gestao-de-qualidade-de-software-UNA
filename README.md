@@ -33,13 +33,13 @@ Categorize as receitas em coleções para facilitar o acesso.
 
 # testes
 
-- [ ] Conectar na api
+- [x] Conectar na api
 
-- [ ] Procure receitas: explore o catálogo de receitas por cozinha, preferências alimentares ou ingredientes.
+- [x] Procure receitas: explore o catálogo de receitas por cozinha, preferências alimentares ou ingredientes.
 
-- [ ] Bookmark: Clique no ícone de marcador em um cartão de receita para salvá-lo em Bookmark.
+- [x] Bookmark: Clique no ícone de marcador em um cartão de receita para salvá-lo em Bookmark.
 
-- [ ] Criar Receitas: Clique no botão "Criar Receita" para adicionar suas próprias receitas ao aplicativo.
+- [x] Criar Receitas: Clique no botão "Criar Receita" para adicionar suas próprias receitas ao aplicativo.
 
 # pre-requisitos
 
