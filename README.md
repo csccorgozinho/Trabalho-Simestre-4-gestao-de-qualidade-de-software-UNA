@@ -60,13 +60,15 @@ cd recipe-app
 Install the project dependencies:
 
 Copy code
+
 npm install
+
 Start the app:
 
 Copy code
 npm start
 
-Open your web browser and go to http://localhost:3000 to access the Recipe App.
+Open your web browser and go to http://localhost:1234 to access the Recipe App.
 
 # tecnologias
 - [TypeScript](https://www.typescriptlang.org/)
