@@ -1,0 +1,1221 @@
+devlog-Caio-Silva-Campos-Corgozinho
+
+metricas
+
+start : 25/09/23
+
+objetivo : esse app foi criado com o objetivo educativo.
+
+objetivo de desenvolvimento: o app deve funcionar em um aabiante de testes.
+
+funcionalidade : esse app foi criado para mostrar receitas de difersos pratos.
+
+testes:53 foram realisados dom 51 bem succedidos e 2 falhas
+
+eficencia de programação : 30 dia de desenvolvimento resulta em 97 linhas por dia.
+
+corbertura : o valor da cobertura e de 60% do programa inteiro.
+
+complexidade ciciomatica : volor da complexidade ciciomatica para o programa inteiro e 51.
+
+feramentas : jester, parcel, vscode e chatGPT
+
+resultados : o app funcina coretamente em um ambiente de test
+
+deadline : 6/11/23
+
+ :test/index.html Cyclomatic Complexity for this code is 0
+
+Visão Geral do Projeto
+
+Este código HTML parece fazer parte de um aplicativo da web ou site para localizar e gerenciar receitas. O código inclui a estrutura básica de um documento HTML, links para recursos externos, como folhas de estilo e arquivos JavaScript, e o layout da página com vários elementos, como cabeçalho, barra de pesquisa, resultados de receitas e uma sobreposição para possíveis modais. O código também contém alguns comentários HTML que provavelmente pretendem representar espaços reservados para conteúdo dinâmico.
+
+Propósito
+
+O objetivo deste código é criar uma interface da web para que os usuários pesquisem receitas, exibam resultados de pesquisa e, potencialmente, visualizem detalhes de receitas individuais. O código também inclui espaços reservados para recursos como adicionar receitas e gerenciar marcadores, mas esses recursos estão comentados no momento.
+
+A estrutura HTML pode ser dividida nas seguintes seções:
+
+Declaração de tipo de documento e tags HTML de abertura
+
+-<!DOCTYPE html>: Especifica o tipo e a versão do documento.
+-<html lang="en">: O elemento raiz do documento.
+
+Seção Principal
+
+-Contém metadados e links para recursos externos.
+-Meta tags para conjunto de caracteres, viewport e compatibilidade.
+-Link para uma folha de estilo do Google Fonts.
+-Link para um favicon.
+-Link para uma folha de estilo externa (main.scss).
+-Link para um arquivo JavaScript externo (controller.js).
+-O título da página da web.
+
+Seção Corporal
+
+-Contém o conteúdo principal da página.
+-Seção de cabeçalho com logotipo, formulário de pesquisa e navegação.
+-Seção de resultados de pesquisa com espaços reservados para resultados de pesquisa e paginação.
+-Informações sobre direitos autorais.
+-Seção de receitas com espaços reservados para detalhes da receita.
+-Sobreposição e modal para adicionar uma receita (oculto por padrão).
+
+Elementos chave
+
+-<header>: A seção do cabeçalho contendo o logotipo do site, formulário de pesquisa e links de navegação.
+-<form>: O formulário de pesquisa com um campo de entrada e um botão de pesquisa.
+-<nav>: Links de navegação para adicionar uma receita e gerenciar marcadores.
+-<ul>, <li>: Listas de itens de navegação.
+-<div class="search-results">: Contêiner para resultados de pesquisa e paginação.
+-<ul class="results">: Lista de resultados da pesquisa (atualmente vazia).
+-<div class="pagination">: Botões de paginação (atualmente vazios).
+-<div class="recipe">: Recipiente para detalhes de receitas individuais (atualmente comentado).
+-<div class="overlay hidden">: Uma sobreposição para modais, inicialmente oculta.
+-<div class="add-recipe-window hidden">: Um modal para adicionar uma receita, inicialmente oculto.
+
+Notas de desenvolvimento
+
+O código inclui espaços reservados para vários recursos, como exibição de resultados de pesquisa, detalhes de receitas individuais, adição de receitas e gerenciamento de marcadores. Esses recursos precisam ser implementados no JavaScript associado (controller.js) e, potencialmente, no código de back-end.
+
+O código usa classes CSS como “oculto” para controlar a visibilidade dos elementos. Isso sugere que JavaScript será usado para lidar com interações e mostrar/ocultar certos elementos.
+
+Os valores de entrada nos campos do formulário são atualmente codificados como espaços reservados. Em uma aplicação real, estes seriam dados inseridos pelo usuário ou carregados dinamicamente.
+
+O código faz referência a recursos externos como imagens (por exemplo, logo.png, ícones) e folhas de estilo (main.scss) que devem estar disponíveis e vinculados corretamente na estrutura de arquivos do projeto.
+
+A tag de script no final faz referência a um arquivo JavaScript externo (controller.js), que deve conter a lógica do aplicativo.
+
+ :test/js/controller.js  Cyclomatic Complexity for this code is 8
+
+Visão geral do código
+
+O código JavaScript fornecido é usado em um aplicativo da web para controlar diversas funcionalidades, como exibição de receitas, resultados de pesquisa e marcadores. Ele interage com um modelo (provavelmente contendo dados) e vários componentes de visualização para criar uma experiência de usuário dinâmica e interativa.
+
+Propósito
+
+O objetivo principal do código é gerenciar e controlar vários aspectos da aplicação web. Isso inclui lidar com interações do usuário, carregar e renderizar receitas, atualizar resultados de pesquisa, gerenciar marcadores e permitir a adição de novas receitas. Ele desempenha um papel crucial para garantir que o aplicativo da web funcione conforme o esperado e forneça uma experiência de usuário perfeita.
+Principais funções e componentes
+Declarações de importação
+O código começa importando vários módulos, incluindo modelo, visualizações e definições de configuração, que são essenciais para a funcionalidade do aplicativo.
+
+controleReceitas
+
+Esta função assíncrona controla a exibição de uma receita. Ele extrai o ID da receita do hash da URL, atualiza a visualização dos resultados, exibe marcadores, carrega a receita e a renderiza. Se ocorrer um erro, ele renderiza uma mensagem de erro e registra o erro.
+
+controlSearchResults
+
+Esta função assíncrona trata da funcionalidade de pesquisa. Ele renderiza um controle giratório de carregamento, recupera a consulta de pesquisa, carrega os resultados da pesquisa e os renderiza. Ele também lida com paginação e renderização de botões de paginação inicial. Se ocorrer um erro, ele registra o erro.
+
+controlePaginação
+
+Esta função controla a paginação dos resultados da pesquisa. Ele renderiza novos resultados e atualiza os botões de paginação.
+
+controleServiços
+
+Esta função atualiza o número de porções de uma receita e renderiza novamente a visualização da receita com as novas porções.
+
+controlAddBookmark
+
+Esta função permite aos usuários adicionar ou remover um marcador de uma receita. Ele atualiza o modelo, a visualização da receita e a visualização dos marcadores de acordo.
+
+controlFavoritos
+
+Esta função renderiza a visualização dos marcadores.
+
+controlAddRecipe
+
+Esta função assíncrona trata da adição de uma nova receita. Ele exibe um controle giratório de carregamento, carrega os novos dados da receita para o modelo, renderiza a receita, mostra uma mensagem de sucesso, atualiza a visualização do marcador, altera o URL e fecha a janela do formulário. Se ocorrer um erro, ele registra o erro e exibe uma mensagem de erro.
+
+iniciar
+
+A função init inicializa manipuladores de eventos para várias interações do usuário. Ele conecta as visualizações e os controles para garantir uma interação tranquila.
+ 
+:test/js/confg.js  Cyclomatic Complexity for this code is 6
+
+Visão geral do código
+
+O código exporta um conjunto de constantes de configuração usadas em todo o aplicativo. Essas constantes definem vários parâmetros, como URL da API, duração do tempo limite, resultados por página, chave da API e duração do fechamento modal.
+
+Propósito
+
+O objetivo dessas constantes de configuração é definir valores específicos que afetam o comportamento e a funcionalidade da aplicação web. Eles fornecem informações essenciais para o aplicativo se comunicar com serviços externos (por exemplo, uma API), controlar as interações do usuário (por exemplo, tempo limite para solicitações de API) e determinar como os dados são exibidos (por exemplo, o número de resultados por página).
+
+Constantes de configuração chave
+API_URL
+
+Objetivo: Esta constante define a URL da API externa com a qual o aplicativo interage para recuperar dados da receita.
+Valor: 'https://forkify-api.herokuapp.com/api/v2/recipes/'
+TIMEOUT_SEC
+
+Objetivo: Esta constante define o tempo máximo (em segundos) que a aplicação aguardará uma resposta da API antes de considerar a solicitação como falhada.
+Valor: 10
+RES_PER_PAGE
+
+Objetivo: Esta constante especifica o número de resultados (receitas) a serem exibidos por página ao paginar os resultados da pesquisa.
+Valor: 10
+CHAVE
+
+Objetivo: Esta constante representa uma chave de API, que provavelmente é necessária para acessar a API externa. Deve ser mantido confidencial e é usado para autenticação e autorização.
+Valor: '5ddc1a46-3b65-4f8d-b6b5-e81f9d9e3189'
+MODAL_CLOSE_SEC
+
+Objetivo: Esta constante determina a duração (em segundos) durante a qual as janelas modais, como mensagens de sucesso ou mensagens de erro, são exibidas ao usuário antes de fecharem automaticamente.
+Valor: 2,5
+
+ :test/js/helpers.js  Cyclomatic Complexity for this code is 5
+
+Visão geral do código
+
+O código define funções para fazer solicitações assíncronas a uma API remota. Essas funções lidam com vários aspectos da comunicação de rede, incluindo envio de dados, recebimento de respostas e gerenciamento de tempos limite.
+
+Propósito
+
+O objetivo principal deste código é facilitar a comunicação entre a aplicação web e uma API externa. Ele garante que as solicitações sejam feitas de forma assíncrona, lide com possíveis tempos limite e analise os dados de resposta. Isso é essencial para buscar e enviar dados de e para a API.
+
+Principais funções e constantes
+
+Função de tempo limite
+
+Objetivo: Esta função é responsável por gerar uma promessa que representa um timeout. É usado para definir um tempo máximo para a conclusão de uma solicitação, após o qual um erro é gerado.
+Parâmetros:
+s (Número): a duração (em segundos) após a qual a solicitação atingirá o tempo limite.
+Uso: É usado para definir um tempo limite para solicitações de rede, garantindo que elas não demorem muito para serem concluídas.
+Função AJAX
+Objetivo: Esta função faz uma solicitação assíncrona para o URL especificado. Ele lida com solicitações GET e POST, atinge o tempo limite se uma resposta demorar muito e analisa a resposta JSON.
+Parâmetros:
+url (String): A URL para a qual a solicitação é feita.
+uploadData (Object): Dados a serem carregados com a solicitação (opcional).
+Uso: É usado para buscar dados da API e, opcionalmente, enviar dados para a API. Esta função também trata erros e tempos limite durante a solicitação de rede.
+
+ : test/js/model.jS Cyclomatic Complexity for this code is 22
+
+Visão geral do código
+
+O código fornecido é responsável por gerenciar o estado e os dados de uma aplicação web. Inclui funções para carregar receitas, pesquisar receitas, atualizar porções, gerenciar marcadores e fazer upload de novas receitas. O objeto de estado armazena informações sobre a receita atualmente selecionada, resultados de pesquisa e marcadores.
+
+Propósito
+
+O objetivo principal deste código é interagir com uma API externa para recuperar e exibir dados de receitas, gerenciar interações do usuário, como alterar porções e adicionar/remover marcadores, e permitir a criação de novas receitas. Este código facilita os principais recursos do aplicativo de receitas.
+
+Principais funções e constantes
+
+Objeto de estado
+
+Objetivo: O objeto state armazena o estado atual do aplicativo, incluindo a receita selecionada, resultados de pesquisa e marcadores.
+Propriedades:
+receita: A receita atualmente selecionada.
+pesquisa: informações sobre a consulta de pesquisa, os resultados da pesquisa e a página de pesquisa atual.
+marcadores: uma variedade de receitas marcadas.
+
+Função createRecipeObject
+
+Objetivo: Esta função é usada para extrair dados relevantes da resposta da API e criar um objeto de receita simplificado.
+Parâmetros:
+data (Object): Os dados recebidos da API.
+Uso: Extrai detalhes essenciais da receita e retorna um objeto com informações relevantes.
+
+Função carregarRecipe
+
+Objetivo: Esta função carrega uma receita fazendo uma solicitação assíncrona à API com base no id fornecido.
+Parâmetros:
+id (String): O ID da receita a ser carregada.
+Uso: Carrega a receita, atualiza o estado e verifica se a receita está marcada.
+
+Função loadSearchResults
+
+Objetivo: Esta função carrega os resultados da pesquisa da API com base em uma determinada consulta.
+Parâmetros:
+consulta (String): A consulta de pesquisa.
+Uso: carrega os resultados da pesquisa, atualiza o estado e define a página atual como a primeira página de resultados.
+
+Função getSearchResultsPage
+
+Objetivo: Esta função retorna uma fatia dos resultados da pesquisa para a página atual.
+Parâmetros:
+página (Número): O número da página (o padrão é a página atual no estado).
+Uso: retorna uma parte dos resultados da pesquisa com base na página especificada.
+
+Função updateServings
+
+Objetivo: Esta função atualiza as porções da receita atualmente selecionada, ajustando as quantidades dos ingredientes de acordo.
+Parâmetros:
+newServings (Number): O novo número de porções.
+Utilização: Recalcula as quantidades dos ingredientes com base no novo número de porções.
+Função addBookmark
+Objetivo: Esta função adiciona a receita atualmente selecionada aos marcadores e atualiza o estado.
+Uso: Adiciona uma receita aos favoritos e marca-a como favorita no estado.
+Função deleteBookmark
+Objetivo: Esta função remove uma receita marcada com base em seu ID e atualiza o estado.
+Parâmetros:
+id (String): O ID da receita a ser removida dos favoritos.
+Uso: Remove uma receita dos favoritos e atualiza o estado.
+
+Função persistBookmarks
+
+Objetivo: Esta função salva os marcadores no armazenamento local, garantindo que eles persistam durante as sessões.
+Uso: Salva os favoritos no armazenamento local do navegador.
+
+Função de inicialização
+
+Objetivo: Esta função inicializa o aplicativo carregando marcadores do armazenamento local.
+Uso: Recupera e inicializa os marcadores armazenados no armazenamento local.
+
+Função uploadRecipe
+
+Objetivo: Esta função carrega uma nova receita para a API.
+Parâmetros:
+newRecipe (Object): Os novos dados da receita a serem carregados.
+Uso: carrega uma nova receita, atualiza o estado e adiciona a nova receita aos favoritos
+
+ :test/js/view/addRecipeView.js Cyclomatic Complexity for this code is 0
+
+Visão geral do código
+
+A classe AddRecipeView faz parte de uma aplicação web e foi projetada para fornecer uma interface de usuário para adicionar novas receitas. Ele contém métodos para exibir a janela de adição de receita, lidar com interações do usuário e fazer upload de dados de receita para o servidor.
+
+Propósito
+
+O objetivo principal da classe AddRecipeView é:
+
+Fornece uma interface de usuário para adicionar novas receitas.
+Permitir que os usuários abram e fechem a janela de adição de receita.
+Capture e envie dados de receitas ao servidor para armazenamento.
+
+Principais recursos e funções
+
+_parentElement
+
+Objetivo: Identifica o elemento HTML pai para o qual a visualização será renderizada.
+Valor: o elemento .upload.
+
+_mensagem
+
+Objetivo: Define uma mensagem de sucesso que é exibida após o upload bem-sucedido de uma receita.
+Valor: 'A receita foi carregada com sucesso :)'.
+
+_janela e _sobreposição
+
+Objetivo: Referências à janela de adição de receita e sobreposição de elementos HTML para mostrar e ocultar a janela.
+
+_btnOpen e _btnClose
+
+Objetivo: Referências ao botão "Adicionar receita" no menu de navegação e ao botão Fechar na janela de adição de receita.
+construtor()
+Objetivo: Inicializa o objeto AddRecipeView chamando o construtor da classe pai (View) e configurando ouvintes de eventos para mostrar e ocultar a janela de adição de receita.
+alternarJanela()
+Objetivo: Alterna a visibilidade da janela de adição de receita e sobreposição adicionando ou removendo a classe CSS 'oculta'.
+Uso: Chamado quando o usuário clica no botão "Adicionar Receita" ou no botão Fechar.
+
+_addHandlerShowWindow()
+
+Objetivo: Adiciona um ouvinte de evento ao botão "Adicionar receita" para mostrar a janela de adição de receita quando clicado.
+
+_addHandlerHideWindow()
+
+Objetivo: Adiciona ouvintes de eventos ao botão Fechar e sobrepõe-se para ocultar a janela de adição de receita quando clicado.
+addHandlerUpload(manipulador)
+Objetivo: Adiciona um ouvinte de eventos ao formulário de upload de receitas e captura os dados do formulário a serem enviados ao servidor.
+Parâmetros:
+manipulador (Função): A função a ser executada quando o formulário é enviado, passando os dados do formulário como um objeto.
+Uso: permite que os usuários enviem uma nova receita, capturando dados do formulário e passando-os para uma função de tratamento especificada.
+
+_generateMarkup()
+
+Objetivo: Um método de espaço reservado para gerar marcação HTML para a visualização. Atualmente não implementado.
+
+ :test/js/view/bookmarksView.js Cyclomatic Complexity for this code is 0
+
+Visão geral do código
+A classe BookmarksView faz parte de uma aplicação web e se concentra na exibição de receitas marcadas como favoritas. Ele estende a classe View e fornece métodos para renderizar uma lista de receitas marcadas e lidar com as interações do usuário.
+
+Propósito
+
+O objetivo principal da classe BookmarksView é:
+
+Renderize uma lista de receitas marcadas.
+Exibe uma mensagem de erro quando não há marcadores.
+Forneça uma maneira de adicionar um manipulador de eventos para renderizar os marcadores.
+
+Principais recursos e funções
+
+_parentElement
+
+Objetivo: Identifica o elemento HTML pai onde a lista de receitas marcadas será renderizada.
+Valor: O elemento .bookmarks__list.
+
+_mensagem de erro
+
+Objetivo: Define uma mensagem de erro a ser exibida quando não houver marcadores.
+Valor: 'Ainda não há favoritos. Encontre uma boa receita e marque-a;)'.
+
+_mensagem
+
+Objetivo: Uma propriedade para armazenar mensagens adicionais (não usadas atualmente).
+addHandlerRender(manipulador)
+Objetivo: Adiciona um ouvinte de evento ao evento load, normalmente acionado quando a página da web é carregada. Ele permite a execução de uma função manipuladora que renderiza os marcadores.
+Parâmetros:
+manipulador (Função): A função a ser executada quando ocorre o evento de carregamento, normalmente usada para renderizar as receitas marcadas.
+Uso: fornece uma maneira de renderizar marcadores quando a página é carregada.
+
+_generateMarkup()
+
+Objetivo: Gerar marcação HTML para renderizar as receitas marcadas.
+Valor de retorno: uma string de marcação HTML representando as receitas marcadas.
+Uso: Chamado para gerar a marcação HTML para renderizar as receitas marcadas.
+
+ :test/js/view/paginationView.js  Cyclomatic Complexity for this code is 3
+
+Visão geral do código
+
+A classe PaginationView faz parte de uma aplicação web e se concentra na apresentação de controles de paginação para uma lista de itens, como resultados de pesquisa. Ele estende a classe View e fornece métodos para gerar marcação HTML que representa controles de paginação e lidar com interações do usuário.
+
+Propósito
+
+O objetivo principal da classe PaginationView é:
+
+Renderize controles de paginação para navegar por uma lista de itens.
+Responda às interações do usuário com os controles de paginação.
+Forneça uma representação visual da navegação da página usando marcação HTML.
+Principais recursos e funções
+
+_parentElement
+
+Objetivo: Identifica o elemento HTML pai onde os controles de paginação serão renderizados.
+Valor: o elemento .pagination.
+addHandlerClick(manipulador)
+Objetivo: Adiciona um manipulador de eventos de clique ao _parentElement. A função manipuladora será executada quando um botão de paginação for clicado.
+Parâmetros:
+manipulador (Função): A função a ser executada quando um botão de paginação é clicado. Normalmente recebe o número da página para a qual o usuário deseja navegar.
+Uso: permite que os usuários interajam com os controles de paginação, acionando a navegação para uma página diferente de resultados.
+
+_generateMarkup()
+
+Objetivo: Gera marcação HTML representando os controles de paginação com base nos dados fornecidos.
+Valor de retorno: uma string de marcação HTML que representa os controles de paginação.
+Uso: chamado para gerar a marcação HTML para renderizar os controles de paginação.
+
+ :test/js/view/previewView.js  Cyclomatic Complexity for this code is 4
+
+Visão geral do código
+
+A classe PreviewView faz parte de um aplicativo Web e se concentra na apresentação de itens de visualização, normalmente representando resultados de pesquisa ou uma lista de itens. Ele estende a classe View e fornece um método para gerar marcação HTML para esses itens de visualização. O PreviewView é frequentemente usado para gerar uma lista de itens de visualização clicáveis para os usuários selecionarem.
+
+Propósito
+
+O objetivo principal da classe PreviewView é:
+
+Gere marcação HTML para um item de visualização.
+Realce o item atualmente selecionado na lista de itens de visualização com base no hash da URL.
+Responda às interações do usuário marcando visualmente o item ativo.
+Principais recursos e funções
+
+_generateMarkup()
+
+Objetivo: Gerar marcação HTML representando um item de visualização, que pode fazer parte de uma lista de itens.
+Valor de retorno: uma string de marcação HTML que representa o item de visualização.
+Uso: chamado para gerar a marcação HTML para renderizar o item de visualização. Ele também verifica se o item representado pelo PreviewView é o item atualmente selecionado (ativo) com base no hash da URL e adiciona uma classe específica a ele.
+
+ :test/js/view/recipeView.js  Cyclomatic Complexity for this code is 1
+
+Visão geral do código
+
+A classe RecipeView faz parte de uma aplicação web e tem como foco apresentar informações detalhadas sobre uma receita. Ele estende a classe View e fornece métodos para gerar marcação HTML para exibir a receita e responder às interações do usuário.
+
+Propósito
+
+O objetivo principal da classe RecipeView é:
+
+Gere marcação HTML para exibir uma receita, incluindo título, imagem, tempo de cozimento, porções, ingredientes e instruções de cozimento.
+Lide com as interações dos usuários, permitindo que eles atualizem as porções, marquem a receita e acessem instruções externas.
+
+Principais recursos e funções
+
+_generateMarkup()
+
+Objetivo: Gerar marcação HTML representando uma receita detalhada.
+Valor de retorno: uma string de marcação HTML que representa a receita detalhada.
+Uso: chamado para gerar a marcação HTML para renderizar a receita detalhada. A marcação inclui o título da receita, imagem, tempo de cozimento, porções, ingredientes, instruções de cozimento e botões para atualizar porções e marcar a receita.
+
+_generateMarkupIngrediente(ing)
+
+Objetivo: Gerar marcação HTML representando um ingrediente.
+Parâmetros: ing (um objeto que representa um ingrediente)
+Valor de retorno: uma string de marcação HTML que representa o ingrediente.
+Uso: Chamado para gerar marcação HTML para cada ingrediente da receita. Inclui um ícone de marca de seleção, quantidade, unidade e descrição do ingrediente.
+
+Manipuladores de eventos
+
+addHandlerRender(handler): escuta alterações no hash de URL ou eventos de carregamento de página e invoca a função de manipulador fornecida para renderizar a receita de acordo.
+addHandlerUpdateServings(handler): escuta cliques nos botões de atualização de porções e invoca a função de manipulador fornecida para atualizar as porções.
+addHandlerAddBookmark(handler): escuta cliques no botão de marcador e invoca a função de manipulador fornecida para adicionar ou remover a receita dos marcadores.
+
+ :test/js/view/resultsView.js  Cyclomatic Complexity for this code is 1,
+
+Visão geral do código
+
+A classe ResultsView faz parte de uma aplicação web e se concentra em apresentar uma lista de resultados de pesquisa de receitas. Ele estende a classe View e fornece métodos para gerar marcação HTML para exibir os resultados.
+
+Propósito
+
+O objetivo principal da classe ResultsView é:
+
+Gere marcação HTML para exibir uma lista de resultados de pesquisa de receitas.
+Lide com as interações do usuário, permitindo que eles selecionem e visualizem informações detalhadas sobre uma receita específica.
+Principais recursos e funções
+
+_generateMarkup()
+
+Objetivo: Gerar marcação HTML representando uma lista de resultados de pesquisa de receitas.
+Valor de retorno: uma string de marcação HTML que representa os resultados da pesquisa.
+Uso: chamado para gerar a marcação HTML para renderizar os resultados da pesquisa. A marcação inclui uma lista de receitas e seus detalhes. Cada resultado é gerado usando o módulo previewView.
+
+ :test/js/view/searchView.js  Cyclomatic Complexity for this code is 1
+
+Visão geral do código
+
+A classe SearchView é um componente de uma aplicação web que se concentra no gerenciamento de entradas do usuário para pesquisas de receitas. Ele permite que os usuários insiram consultas de pesquisa, acionem ações de pesquisa e limpem o campo de entrada.
+
+Propósito
+
+O objetivo principal da classe SearchView é:
+
+Forneça um campo de entrada onde os usuários possam inserir consultas de pesquisa.
+Capture e recupere a consulta de pesquisa inserida pelo usuário.
+Limpe o campo de entrada depois que a consulta de pesquisa for recuperada.
+Lide com as interações do usuário, especificamente envios de formulários.
+Principais recursos e funções
+
+getQuery()
+
+Objetivo: Recupera a consulta de pesquisa inserida pelo usuário.
+Valor de retorno: uma string que representa a consulta de pesquisa do usuário.
+Uso: chamado para recuperar a consulta de pesquisa inserida pelo usuário. Ele lê o valor do campo de entrada e limpa o campo.
+
+_clearInput()
+
+Objetivo: Limpa o campo de entrada após a captura da consulta de pesquisa.
+Uso: Chamado para limpar o campo de entrada, garantindo que ele esteja pronto para a próxima entrada do usuário.
+addHandlerSearch(manipulador)
+Objetivo: Adiciona um ouvinte de evento ao formulário de pesquisa.
+Uso: chamado para adicionar um ouvinte de evento ao evento de envio do formulário de pesquisa. Quando o usuário envia o formulário, a função de tratamento especificada é executada, permitindo que o aplicativo inicie uma pesquisa com base na entrada do usuário.
+
+ :test/js/view/View.js The complexity here depends on the logic
+
+Visão geral do código
+
+A classe View serve como base para renderizar objetos de dados para o Document Object Model (DOM) em um aplicativo da web. Ele fornece métodos para renderizar, atualizar, limpar, exibir controles giratórios, mostrar mensagens de erro e exibir mensagens de sucesso.
+
+Propósito
+
+O objetivo principal da classe View é:
+
+Renderizar dados para o DOM: Renderize objetos de dados como marcação HTML para serem exibidos na página da web.
+
+Atualizar conteúdo existente: atualize e renderize novamente o conteúdo com base nas alterações nos dados.
+
+Exibir controles giratórios de carregamento: mostre um controle giratório de carregamento para indicar que o conteúdo está sendo buscado ou processado.
+
+Mostrar mensagens de erro: exibe mensagens de erro para informar os usuários quando algo dá errado.
+
+Exibir mensagens de sucesso: exiba mensagens de sucesso para fornecer feedback aos usuários.
+
+Principais recursos e funções
+
+renderizar(dados, renderizar = verdadeiro)
+
+Objetivo: Renderizar o objeto recebido no DOM.
+Parâmetros:
+dados: os dados a serem renderizados (por exemplo, receita). Pode ser um objeto ou uma matriz de objetos.
+render (opcional): se definido como false, cria uma string de marcação sem renderizar no DOM.
+Valor de retorno:
+Se render for verdadeiro, ele renderiza a marcação no DOM. Se render for falso, ele retornará uma string de marcação.
+Uso: O método principal para renderizar dados no DOM. Ele chama o método _generateMarkup para gerar a marcação HTML e insere-a no DOM.
+atualizar (dados)
+Objetivo: atualizar o DOM com novos dados sem renderizar novamente a visualização inteira.
+Parâmetros:
+data: os dados atualizados a serem renderizados.
+Uso: Atualiza o DOM com novos dados, preservando quaisquer elementos inalterados.
+
+_claro()
+
+Objetivo: Limpar o HTML interno do elemento pai, preparando-o para novo conteúdo.
+Uso: chamado para remover o conteúdo existente do elemento pai antes de renderizar novos dados.
+
+renderSpinner()
+
+Objetivo: Renderizar um botão giratório de carregamento na página.
+Uso: renderiza um controle giratório de carregamento para indicar que o conteúdo está sendo carregado ou processado.
+renderError(mensagem = this._errorMessage)
+Objetivo: Renderizar uma mensagem de erro na página.
+Parâmetros:
+mensagem (opcional): A mensagem de erro a ser exibida.
+Uso: Exibe uma mensagem de erro para informar os usuários quando ocorre um erro.
+
+renderMessage(mensagem = this._message)
+
+Objetivo: Renderizar uma mensagem de sucesso na página.
+Parâmetros:
+mensagem (opcional): A mensagem de sucesso a ser exibida.
+Uso: exibe uma mensagem de sucesso para fornecer feedback aos usuários quando uma operação for bem-sucedida.
+Considerações adicionais
+O método _generateMarkup é mencionado no método render, mas não está explicitamente definido no código fornecido. Este método seria definido em subclasses que estendem a classe View e é responsável por gerar a marcação HTML específica para aquela view.
+
+A classe usa ícones de uma planilha de sprites SVG para renderizar vários ícones. Esses ícones normalmente são referenciados na marcação HTML gerada.
+
+A classe assume a existência de um elemento pai (por exemplo, .results, .recipe) no DOM onde o conteúdo renderizado será inserido. A propriedade this._parentElement é usada para essa finalidade.
+
+:test/sass/_base.scss Cyclomatic Complexity for this code is 0
+
+Visão geral do código
+
+O código SCSS fornecido contém variáveis, estilos e consultas de mídia para definir o estilo de um aplicativo da web. Ele define variáveis de cores, pontos de interrupção e estilos para elementos HTML. Abaixo está uma visão geral dos principais componentes deste código SCSS.
+
+Variáveis
+
+O código define diversas variáveis para cores, pontos de interrupção e gradientes. Essas variáveis são usadas para garantir consistência e facilitar a atualização do design da aplicação web.
+
+Cores:
+
+$color-primary: A cor primária do aplicativo.
+$color-grad-1 e $color-grad-2: Cores usadas para criar um gradiente.
+Vários tons de cinza para texto, plano de fundo e linhas claros e escuros.
+Gradiente:
+
+$gradiente: um gradiente linear criado de $color-grad-1 a $color-grad-2.
+Pontos de interrupção:
+
+$bp-large, $bp-medium, $bp-small e $bp-smallest: pontos de interrupção de consulta de mídia para design responsivo.
+Redefinir estilos
+O código redefine os estilos padrão de margens e preenchimentos em todos os elementos do aplicativo web. Também inclui a propriedade box-sizing para garantir um comportamento consistente do modelo de caixa.
+
+Tipografia
+
+Os estilos de tipografia definem propriedades de fonte para todo o aplicativo da web.
+
+font-size é definido como 62,5% do tamanho da fonte padrão (10px) no elemento HTML. Isso facilita trabalhar com um layout baseado em rem, com uma consulta de mídia para reduzir o tamanho da fonte em telas menores.
+
+font-family especifica a fonte padrão para a aplicação, neste caso, 'Nunito Sans'.
+
+font-weight e line-height são definidos para conteúdo de texto.
+
+A cor do conteúdo do texto é definida como $color-grey-dark-1.
+
+Fundo
+
+O código define um gradiente de plano de fundo para o elemento body, o que cria um efeito de plano de fundo visualmente atraente para o aplicativo da web. O gradiente cobre toda a janela de visualização e se adapta a vários tamanhos de tela.
+
+Estilos de contêiner
+
+O elemento contêiner, normalmente envolvendo o conteúdo do aplicativo da web, é estilizado com largura máxima, cor de fundo, raio da borda, sombra e layout de grade responsivo.
+
+max-width garante que o contêiner não fique muito largo em telas grandes.
+min-height fornece uma altura mínima para o contêiner.
+margin centraliza o contêiner horizontalmente e adiciona espaço ao seu redor.
+background-color define a cor de fundo do contêiner.
+border-radius arredonda os cantos do contêiner.
+box-shadow aplica um efeito de sombra ao contêiner.
+display: grid define um layout de grade com duas linhas e duas colunas para design responsivo.
+grid-template-areas estabelece áreas de grade nomeadas para organizar o conteúdo no contêiner.
+Existem consultas de mídia para ajustar os estilos de contêiner para telas menores, tornando o design responsivo.
+
+ :test/sass/_components.scss  Cyclomatic Complexity for this code is 0
+
+Visão geral
+
+O código SCSS fornecido define estilos para vários tipos de botões, títulos, links, controles giratórios e mensagens em um aplicativo da web. Ele usa variáveis para manter a consistência de cores, fontes e tamanhos em todo o aplicativo. Abaixo está uma análise dos principais componentes deste código SCSS.
+
+Estilos de botão
+
+O código define vários estilos de botão usando o espaço reservado %btn para propriedades comuns.
+
+.btn: estilo de botão principal com tamanho maior, gradiente de fundo e texto em maiúsculas.
+.btn--small: botão menor com os mesmos estilos de botão primário.
+.btn--inline: Botão embutido com cor e tamanho diferentes, ideal para botões de texto embutidos.
+.btn--round: botão circular com gradiente de fundo, comum para botões de ação arredondados.
+.btn--tiny: estilo de botão minúsculo para botões menores.
+As propriedades comuns dos botões incluem raio da borda, cor, cursor, exibição e transições para efeitos de foco. Diferentes estilos de botão personalizam propriedades como preenchimento, tamanho da fonte e dimensões SVG.
+
+Tipografia
+
+O código define um estilo de título para títulos com a classe .heading--2. Ele define o tamanho da fonte, a espessura da fonte, a cor e a transformação do texto. Também adiciona margem e alinha o texto ao centro.
+
+Ligações
+
+O código estiliza links usando a classe .link para links não visitados e visitados, com uma cor consistente definida em variáveis. Isso ajuda a garantir um estilo de link unificado em todo o aplicativo.
+
+Fiandeiros
+
+Para carregar spinners, uma classe .spinner é definida. Ele centraliza o botão giratório usando a margem e fornece animação para girar o botão giratório indefinidamente. A cor do spinner é definida usando variáveis.
+
+Mensagens
+
+Duas classes de mensagens são definidas: .message e .error. Essas classes fornecem estilo para mensagens ou notificações. Eles incluem largura máxima, margem, preenchimento e a propriedade display para alinhamento flexível. Ambas as classes incluem um ícone SVG com cor de preenchimento e estilo para o texto que o acompanha.
+
+Animação de quadros-chave
+
+Uma animação @keyframes chamada rotate é definida para animar a rotação do controle giratório. Ele transforma o girador de 0 a 360 graus.
+
+ :test/sass/_header.scss  Cyclomatic Complexity for this code is 0
+
+Header Styles
+
+The .header class defines styles for the header section of the web page.
+
+grid-area: head positions the header in a grid layout.
+background-color: $color-grey-light-1 sets the background color.
+display: flex arranges items in a flex container.
+align-items: center vertically centers items within the header.
+justify-content: space-between positions items at the start and end of the header.
+
+Subclass .header__logo
+
+margin-left: 4rem adds left margin to the logo.
+height: 4.6rem defines the logo's height.
+display: block sets the logo to be a block-level element.
+
+Search Bar Styles
+
+The .search class defines styles for a search bar, allowing users to input search queries.
+
+background-color: #fff sets the background color to white.
+border-radius: 10rem gives the search bar a rounded border.
+display: flex arranges items in a flex container.
+align-items: center vertically centers items within the search bar.
+padding-left: 3rem adds left padding.
+transition: all 0.3s provides smooth transitions for interactive behavior.
+When the search bar is focused, it transforms slightly and adds a box shadow.
+
+Subclass .search__field
+
+border: none removes the border.
+background: none sets the background to none.
+font-family: inherit inherits the font family from the parent.
+color: inherit inherits the text color.
+font-size: 1.7rem defines the font size.
+width: 30rem sets the width of the search field.
+When focused, the outline is removed.
+The placeholder text is styled with color: $color-grey-light-3.
+In smaller viewports (max-width: $bp-medium), the width becomes flexible (width: auto), and the placeholder text changes color.
+
+Subclass .search__btn
+
+font-weight: 600 sets the font weight.
+font-family: inherit inherits the font family.
+transition: all 0.3s provides smooth transitions for interactive behavior.
+
+Navigation Styles
+
+The .nav class defines styles for the navigation section of the web page.
+
+align-self: stretch stretches the navigation vertically.
+margin-right: 2.5rem adds right margin.
+
+Subclass .nav__list
+
+list-style: none removes the list bullet points.
+display: flex arranges items in a flex container.
+height: 100% sets the height of the list.
+
+Subclass .nav__item
+
+position: relative enables positioning of child elements.
+
+Subclass .nav__btn
+
+height: 100% sets the height of navigation buttons.
+font-family: inherit inherits the font family.
+color: inherit inherits the text color.
+font-size: 1.4rem defines the font size.
+font-weight: 700 sets the font weight.
+text-transform: uppercase transforms text to uppercase.
+background: none removes the background.
+border: none removes the border.
+cursor: pointer sets the cursor type.
+padding: 0 1.5rem defines padding.
+display: flex arranges items in a flex container.
+align-items: center vertically centers items within the button.
+An SVG icon is added for each button.
+When focused, the outline is removed.
+On hover, the background color changes.
+
+Bookmarks Styles
+
+The .bookmarks class defines styles for the bookmarks section, which is initially hidden.
+
+padding: 1rem 0 sets padding.
+position: absolute positions the bookmarks absolutely.
+right: -2.5rem sets the initial position slightly to the right.
+z-index: 10 defines the stacking order.
+width: 40rem sets the width of the bookmarks.
+background-color: #fff sets the background color.
+A box shadow adds depth and shadow to the bookmarks section.
+The bookmarks section has visibility: hidden and opacity: 0 to keep it hidden until hovered. When hovered or when a specific button is hovered (.nav__btn--bookmarks), the bookmarks become visible and fully opaque.
+
+Subclass .bookmarks__list
+
+list-style: none removes the list bullet points.
+
+Subclass .bookmarks__field
+
+cursor: pointer sets the cursor type.
+padding: 0 4rem adds padding.
+display: flex arranges items in a flex container.
+align-items: center vertically centers items.
+On hover, the background color changes.
+These styles allow for an interactive bookmarks section that appears when the user interacts with the relevant button.
+
+ :test/sass/_preview.scss  Cyclomatic Complexity for this code is 0
+
+.preview__link
+
+A classe .preview__link define estilos para links de visualização, que parecem representar itens de visualização em uma lista. Esses links devem ser visualmente atraentes e responsivos às interações do usuário.
+
+display: flex organiza itens em um flex container.
+alinhar itens: centralizar verticalmente os itens dentro do link.
+preenchimento: 1,5rem 3,25rem adiciona preenchimento ao link.
+transição: todos os 0,3s fornecem transições suaves para comportamento interativo.
+border-right: 1px sólido #fff adiciona uma borda direita.
+decoração de texto: nenhum remove a decoração de texto dos links.
+Quando pairados, os elementos do link se transformam ligeiramente e mudam sua cor de fundo.
+
+Subclasse .preview__link--active
+
+Esta subclasse estiliza o link quando ele é marcado como "ativo" (talvez indicando um estado selecionado ou em foco). Ele define a cor de fundo como $color-grey-light-1.
+
+.preview__fig
+
+A classe .preview__fig define estilos para figuras de visualização. É provável que sejam contêineres de imagens associados aos itens de visualização.
+
+flex: 0 0 5.8rem define uma largura fixa de 5,8rem sem diminuir ou aumentar.
+border-radius: 50% cria uma forma circular para a figura.
+overflow: oculto oculta qualquer conteúdo transbordante.
+altura: 5,8rem define a altura da figura.
+margem direita: 2rem adiciona margem direita à figura.
+posição: relativo permite o posicionamento relativo de elementos filhos.
+backface-visibility: hidden garante que a face posterior do elemento não fique visível.
+Um pseudoelemento (::before) é usado para criar uma sobreposição de gradiente no topo da figura.
+
+Dentro da figura, um elemento img é estilizado. Ele é exibido como um elemento em nível de bloco, garantindo que ocupe todo o espaço da figura. A imagem está configurada para cobrir a figura com um efeito de transição.
+
+.preview__data
+
+A classe .preview__data define estilos para a seção de dados da visualização, que provavelmente contém informações de texto sobre o item visualizado.
+
+display: grid organiza os itens em um contêiner de grade.
+width: 100% define a largura do contêiner como 100%.
+grid-template-columns: 1fr 2rem define duas colunas com a primeira coluna ocupando o espaço restante e a segunda tendo uma largura fixa.
+row-gap: 0,1rem define o intervalo entre as linhas.
+alinhar itens: centralizar verticalmente os itens dentro do contêiner.
+
+Subclasse .preview__title
+
+grid-column: 1/-1 abrange toda a largura da grade.
+font-size: 1,45rem define o tamanho da fonte.
+color: $color-primary define a cor do texto.
+text-transform: maiúscula transforma o texto em maiúsculas.
+font-weight: 600 define o peso da fonte.
+O texto é truncado quando transborda (excesso de texto: reticências) e uma largura máxima é definida para evitar que ele passe para a próxima linha.
+espaço em branco: nowrap evita quebra automática de texto.
+overflow: oculto oculta qualquer texto transbordante.
+
+.preview__publisher
+
+font-size: 1,15rem define o tamanho da fonte.
+color: $color-grey-dark-2 define a cor do texto.
+text-transform: maiúscula transforma o texto em maiúsculas.
+font-weight: 600 define o peso da fonte.
+
+.preview__gerado pelo usuário
+
+A classe .preview__user-generated define estilos para um elemento, possivelmente um ícone, indicando que o conteúdo é gerado pelo usuário.
+
+background-color: darken($color-grey-light-2, 2%) escurece a cor de fundo.
+display: flex organiza itens em um flex container.
+alinhar itens: centralizar verticalmente os itens dentro do elemento.
+justificar-conteúdo: center centraliza os itens horizontalmente e verticalmente.
+height: 2rem define a altura do elemento.
+width: 2rem define a largura do elemento.
+border-radius: 10rem arredonda os cantos do elemento.
+margin-left: empurra automaticamente o elemento para a esquerda.
+margem direita: 1,75rem adiciona margem direita.
+Dentro do elemento, um ícone SVG é estilizado com altura, largura e cor de preenchimento específicas. Parece ser um indicador de conteúdo gerado pelo usuário.
+
+Esses estilos provavelmente fazem parte de um componente de visualização maior que exibe informações sobre vários itens em formato de lista ou galeria, como receitas, artigos ou produtos.
+
+ :test/sass/_recipe.scss  Cyclomatic Complexity for this code is 0
+
+.receita
+A classe .recipe define estilos para o contêiner de receita, que inclui vários elementos, como figura, detalhes, ingredientes e instruções.
+
+background-color: $color-grey-light-1 define a cor de fundo do contêiner de receita.
+Subclasse .recipe__fig
+Esta subclasse define estilos para a figura na receita. A figura pode conter uma imagem relacionada à receita.
+
+height: 32rem define a altura da figura.
+posição: relativo permite o posicionamento relativo de elementos filhos.
+transform-origin: top especifica a origem da transformação na parte superior da figura.
+Um pseudoelemento (::before) é usado para criar uma sobreposição de gradiente no topo da figura. A sobreposição aumenta o apelo visual da imagem.
+
+Dentro da figura, um elemento img é estilizado. Ele ocupa toda a largura da figura, garantindo que a imagem cubra toda a área com o ajuste do objeto definido como "cobrir".
+
+A classe .recipe__title define estilos para o título da receita.
+
+posição: absoluto posiciona o título absolutamente dentro da figura.
+bottom: 0 alinha o título à parte inferior.
+esquerda: 50% centraliza o título horizontalmente.
+transform: translate(-50%, 20%) skewY(-6deg) move o título ligeiramente para cima e aplica uma transformação distorcida.
+color: #fff define a cor do texto para branco.
+font-weight: 700 define o peso da fonte.
+font-size: 3,25rem define o tamanho da fonte.
+text-transform: maiúscula transforma o texto em maiúsculas.
+largura: 50% define a largura do título.
+altura da linha: 1,95 ajusta a altura da linha.
+text-align: center centraliza o texto.
+O título usa um efeito de fundo gradiente com um elemento span dentro dele. O pseudoelemento ::before é usado para criar um gradiente de fundo.
+
+Para um design responsivo, quando a largura da janela de visualização está abaixo de $bp-medium, a largura do título é aumentada para 70% para acomodar telas menores.
+
+Subclasse .recipe__details
+Esta subclasse define estilos para a seção de detalhes da receita.
+
+display: flex organiza itens em um flex container.
+alinhar itens: center centraliza os itens verticalmente dentro do contêiner.
+padding especifica o preenchimento para a seção de detalhes.
+Dentro da seção de detalhes, existem vários elementos estilizados usando a classe .recipe__info.
+
+font-size: 1.65rem define o tamanho da fonte.
+text-transform: maiúscula transforma o texto em maiúsculas.
+display: flex organiza itens em um flex container.
+alinhar itens: center centraliza os itens verticalmente dentro do contêiner.
+A classe .recipe__info-icon estiliza ícones nas seções de informações.
+
+altura: 2,35rem define a altura dos ícones.
+width: 2.35rem define a largura dos ícones.
+fill: $color-primary define a cor de preenchimento dos ícones.
+margem direita: 1,15rem adiciona margem direita.
+A classe .recipe__info-data ajusta a margem para adicionar espaçamento entre os itens de informação.
+
+A classe .recipe__info-buttons estiliza uma seção que contém botões, possivelmente para ações relacionadas à receita.
+
+display: flex organiza itens em um flex container.
+margem esquerda: 1,6rem adiciona margem esquerda.
+transform: translateY(-1px) desloca a seção ligeiramente para cima.
+A classe .recipe__user-generated é usada para estilizar um elemento que pode indicar conteúdo gerado pelo usuário.
+
+background-color: darken($color-grey-light-2, 2%) escurece a cor de fundo.
+display: flex organiza itens em um flex container.
+alinhar itens: centraliza os itens verticalmente.
+justificar-conteúdo: center centraliza os itens horizontalmente e verticalmente.
+altura: 4rem define a altura.
+largura: 4rem define a largura.
+border-radius: 10rem cria cantos arredondados.
+Dentro deste elemento, há um ícone SVG estilizado. Parece ser um indicador de conteúdo gerado pelo usuário.
+
+Subclasse .recipe__ingredients
+Esta subclasse define estilos para a seção de ingredientes da receita.
+
+padding especifica o preenchimento para a seção de ingredientes.
+font-size: 1.6rem define o tamanho da fonte.
+line-height: 1.4 define a altura da linha.
+background-color: $color-grey-light-2 define a cor de fundo.
+display: flex organiza itens em um flex container.
+flex-direction: coluna organiza itens em um layout de coluna.
+alinhar itens: centraliza os itens verticalmente.
+Dentro da seção de ingredientes, a classe .recipe__ingredient-list organiza os ingredientes como uma grade com duas colunas e um espaço.
+
+A classe .recipe__ingredient define estilos para ingredientes individuais.
+
+display: flex organiza itens em um flex container.
+A classe .recipe__icon estiliza ícones associados aos ingredientes.
+
+height: 2rem define a altura dos ícones.
+largura: 2rem define a largura dos ícones.
+fill: $color-primary define a cor de preenchimento dos ícones.
+margem direita: 1,1rem adiciona margem direita.
+flex: 0 0 auto evita que o ícone diminua ou aumente.
+margin-top: 0,1rem aplica a margem superior.
+A classe .recipe__quantity ajusta a margem direita para adicionar espaçamento entre o ingrediente e sua quantidade.
+
+Subclasse .recipe__directions
+Esta subclasse define estilos para a seção de instruções da receita.
+
+padding especifica o preenchimento para a seção de rotas.
+display: flex organiza itens em um flex container.
+flex-direction: coluna organiza itens em um layout de coluna.
+alinhar itens: center centraliza os itens verticalmente.
+A classe .recipe__directions-text estiliza o texto na seção de instruções.
+
+font-size: 1.7rem define o tamanho da fonte.
+text-align: center centraliza o texto.
+margem inferior: 3,5rem adiciona margem inferior.
+color: $color-grey-dark-2 define a cor do texto.
+A classe .recipe__publisher define estilos para o editor ou fonte da receita.
+
+font-weight: 700 define o peso da fonte.
+Esses estilos criam coletivamente uma exibição atraente e bem estruturada para uma receita ou conteúdo semelhante, com foco no apelo visual e no design responsivo. O uso de gradientes, transformações e layouts flexíveis contribui para uma experiência do usuário visualmente envolvente.
+
+ :test/sass/_serchResults.scss  Cyclomatic Complexity for this code is 0
+
+.Procurar Resultados
+
+A classe .search-results define estilos para um contêiner que parece conter vários elementos relacionados aos resultados da pesquisa. Esses estilos visam criar uma apresentação visualmente atraente para os resultados da pesquisa.
+
+padding: 3rem 0 define o preenchimento do contêiner para fornecer espaçamento acima e abaixo de seu conteúdo.
+display: flex organiza itens em um flex container.
+flex-direction: coluna organiza itens em um layout de coluna, que é típico para exibir resultados de pesquisa.
+
+.resultados
+
+A classe .results é usada para estilizar um elemento que provavelmente contém os resultados da pesquisa ou uma lista de itens.
+
+estilo de lista: nenhum remove o estilo de lista padrão (geralmente marcadores ou números).
+margin-bottom: 2rem adiciona margem abaixo da lista, criando espaço entre os resultados e outros elementos.
+
+.paginação
+
+A classe .pagination define estilos para um controle de paginação, que geralmente é usado para navegar entre várias páginas de resultados de pesquisa.
+
+margin-top: empurra automaticamente o controle de paginação para o topo de seu contêiner.
+padding: 0 3.5rem fornece preenchimento horizontal para o contêiner de paginação.
+Dentro do contêiner de paginação, existem estilos adicionais para a classe .pagination__btn, que provavelmente representa botões de paginação individuais. Esses botões são categorizados em botões “anterior” e “próximo”.
+
+.pagination__btn--prev representa o botão "anterior", que normalmente é usado para navegar para a página anterior.
+
+float: left alinha este botão ao lado esquerdo de seu contêiner.
+.pagination__btn--next representa o botão "próximo", que é usado para navegar para a próxima página.
+
+float: right alinha este botão ao lado direito de seu contêiner.
+
+.copyright
+
+A classe .copyright define estilos para informações de direitos autorais, geralmente exibidas na parte inferior de uma página da web.
+
+color: $color-grey-dark-2 define a cor do texto do copyright.
+font-size: 1.2rem define o tamanho da fonte do texto protegido por direitos autorais.
+padding: 0 3.5rem fornece preenchimento horizontal para o texto de copyright.
+margin-top: 4rem adiciona margem superior para criar espaço entre o conteúdo principal e as informações de direitos autorais.
+Dentro da seção .copyright, existem estilos aplicados aos links com a classe .twitter-link. Esses links são estilizados de uma maneira específica.
+
+.twitter-link:link e .twitter-link:visited definem estilos para os estados normal e visitado desses links.
+color: $color-grey-dark-2 define a cor do texto dos links.
+Esses estilos contribuem coletivamente para uma exibição estruturada e visualmente atraente de resultados de pesquisa, controles de paginação e informações de direitos autorais. O layout permite que os usuários naveguem facilmente pelos resultados da pesquisa e acessem conteúdo relacionado a direitos autorais, mantendo um design consistente e visualmente atraente.
+
+ :test/sass/_upload.scss  Cyclomatic Complexity for this code is 0
+
+.add-recipe-window
+
+A classe .add-recipe-window estiliza uma janela modal para adicionar uma receita.
+
+position:fixed garante que o modal seja posicionado em relação à viewport.
+top: 50% e left: 50% coloque o modal no centro da viewport.
+transform: translate(-50%, -50%) centraliza o modal compensando-o de sua própria largura e altura.
+largura: 100rem define a largura do modal.
+background-color: white dá ao modal um fundo branco.
+border-radius: 9px arredonda os cantos do modal.
+preenchimento: 5rem 6rem fornece espaçamento interno.
+box-shadow adiciona uma sombra ao modal para criar uma sensação de elevação.
+z-index: 1000 garante que o modal seja exibido acima de outros elementos na página.
+transição: todos os 0,5s criam transições suaves para várias alterações.
+Dentro do modal, a classe .btn--close-modal estiliza um botão para fechar o modal.
+
+font-family: herdar permite que o botão herde a fonte de seu pai.
+color: inherit garante que o botão herde a cor do texto.
+position: absoluto torna a posição do botão absoluta dentro do modal.
+superior: 0,5rem e direita: 1,6rem posicione o botão no canto superior direito.
+font-size: 3.5rem define o tamanho da fonte do botão.
+cursor: ponteiro indica que o botão é clicável.
+border: none remove a borda do botão.
+background: nenhum define um fundo transparente para o botão.
+
+.overlay
+
+A classe .overlay estiliza uma sobreposição que cobre toda a viewport quando o modal é exibido. Essa sobreposição escurece o fundo e fornece uma indicação visual de que o modal está ativo.
+
+position: fixa garante que a sobreposição seja fixada na janela de visualização.
+top: 0 e left: 0 ancoram a sobreposição no canto superior esquerdo da viewport.
+width: 100% e height: 100% fazem com que a sobreposição cubra toda a janela de visualização.
+background-color: rgba(0, 0, 0, 0.4) define um fundo preto semitransparente.
+background-filter: blur(4px) aplica um efeito de desfoque à sobreposição, geralmente usado para criar um efeito de vidro fosco.
+z-index: 100 coloca a sobreposição acima da maioria dos outros elementos.
+transição: todos os 0,5s adicionam transições para aparência e desaparecimento suaves.
+
+.hidden
+
+A classe .hidden é usada para ocultar elementos. Ele define sua visibilidade como oculta e sua opacidade como 0, tornando-os efetivamente invisíveis.
+
+.upload
+
+A classe .upload contém estilos para o conteúdo do modal, provavelmente relacionados ao upload de conteúdo, como imagens ou arquivos.
+
+display: grid organiza o conteúdo em um layout de grade.
+grid-template-columns: 1fr 1fr cria um layout de duas colunas dentro da grade.
+lacuna: 4rem 6rem define a lacuna entre os itens da grade.
+Dentro da seção .upload, existem subclasses para elementos neste layout:
+
+.upload__column define estilos para colunas individuais na grade.
+
+grid-template-columns: 1fr 2.8fr organiza os itens em um layout de duas colunas.
+alinhar itens: centralizar verticalmente os itens.
+lacuna: 1,5rem especifica a lacuna entre os itens.
+Os estilos para elementos de rótulo, entrada e botão dentro dessas colunas também são definidos.
+.upload__heading fornece estilos para um elemento de título no layout da grade.
+
+grid-column: 1/-1 abrange o título em todas as colunas.
+.upload__btn centraliza um botão no layout da grade.
+
+grid-column: 1/-1 abrange o botão em todas as colunas.
+justifique-se: center centraliza o botão horizontalmente.
+Esses estilos criam coletivamente uma janela modal com uma posição centralizada, sobreposição e layout de conteúdo estruturado para upload de conteúdo. O modal foi projetado para ser visualmente atraente e funcional para os usuários adicionarem novas receitas.
+
+ :test/sass/main.scss  Cyclomatic Complexity for this code is 0
+
+Declarações de importação
+O trecho de código fornecido inclui diversas instruções de importação para diferentes arquivos SCSS, provavelmente representando diferentes partes do estilo do aplicativo. Aqui está uma visão geral de cada instrução de importação:
+
+@importar 'base';
+
+Esta importação provavelmente inclui uma folha de estilo "base" contendo estilos globais que afetam todo o aplicativo, como configurações de fonte, variáveis de cores e classes de utilitários comuns.
+
+@importar 'componentes';
+
+Esta importação provavelmente inclui uma folha de estilo de "componentes", que contém estilos para componentes de UI reutilizáveis usados em todo o aplicativo. Isso pode incluir botões, formulários e outros elementos da interface do usuário.
+
+@import 'cabeçalho';
+
+Esta importação provavelmente inclui estilos específicos da seção de cabeçalho do aplicativo. Ele pode conter estilos para o logotipo do site, menu de navegação ou qualquer outro componente relacionado ao cabeçalho.
+
+@import 'visualização';
+
+A importação de "visualização" provavelmente está relacionada a estilos de exibição de visualizações de conteúdo. Isso pode incluir estilos para cartões de visualização ou trechos de conteúdo exibidos em uma lista.
+
+@import 'resultadosdapesquisa';
+
+A importação "searchResults" provavelmente contém estilos relacionados à exibição dos resultados da pesquisa. Isso pode incluir estilos de lista, paginação e apresentação de itens de resultados.
+
+@importar 'receita';
+
+A importação de “receita” provavelmente inclui estilos para exibir informações detalhadas sobre uma receita específica. Ele pode conter estilos para um cartão de receita, ingredientes, instruções e outros componentes específicos da receita.
+@importar 'carregar';
+
+A importação de "upload" pode conter estilos relacionados ao upload de conteúdo. Isso pode incluir estilos para campos de entrada de arquivos, formulários de upload ou componentes relacionados.
+Modularização e Organização
+Importar folhas de estilo desta forma modular é uma maneira eficaz de manter seu CSS organizado e fácil de manter. Ele permite que os desenvolvedores trabalhem em partes específicas do aplicativo sem afetar outras pessoas e promove a reutilização do código.
+
+Ao dividir os estilos em arquivos menores com base em sua finalidade, fica mais fácil gerenciar a base de código CSS. Os desenvolvedores podem atualizar e manter o código com mais eficiência e isso incentiva uma arquitetura CSS escalável e de fácil manutenção. Também torna mais simples a colaboração entre diferentes membros da equipe ao trabalhar em diferentes partes do aplicativo.
+
+:test/testcode/view.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘View’ e um conjunto de testes usando Jasmine para testar sua funcionalidade. A classe 'View' possui métodos para renderizar e atualizar dados, limpar o elemento pai, renderizar spinners, mensagens de erro e mensagens de sucesso no DOM.
+
+Estrutura de código
+'View.js': contém a definição da classe 'View'.
+'View.spec.js': Contém o conjunto de testes Jasmine para a classe 'View'.
+
+:test/testcode/SV.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘SearchView’ e um conjunto de testes usando Jasmine para testar sua funcionalidade. A classe 'SearchView' inclui métodos para recuperar a consulta de pesquisa, limpar o campo de entrada e adicionar um manipulador de eventos de pesquisa ao formulário de pesquisa.
+
+Estrutura de código
+'SearchView.js': contém a definição da classe 'SearchView'.
+'SearchView.spec.js': Contém o conjunto de testes Jasmine para a classe 'SearchView'.
+
+:test/testcode/RV.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘RecipeView’ e um conjunto de testes usando Jasmine para testar sua funcionalidade. A classe 'RecipeView' inclui métodos para renderizar detalhes da receita e gerar marcação de ingredientes para uma determinada receita.
+
+Estrutura de código
+'RecipeView.js': contém a definição da classe 'RecipeView'.
+'RecipeView.spec.js': Contém o conjunto de testes Jasmine para a classe 'RecipeView'.
+
+:test/testcode/RSV.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘ResultsView’ e um conjunto de testes usando Jasmine para testar sua funcionalidade. A classe 'ResultsView' inclui um método para renderizar uma lista de resultados.
+
+Estrutura de código
+'ResultsView.js': contém a definição da classe 'ResultsView'.
+'ResultsView.spec.js': Contém o conjunto de testes Jasmine para a classe 'ResultsView'.
+
+:test/testcode/PVV.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘PreviewView’ e um conjunto de testes Jasmine para testar sua funcionalidade. A classe 'PreviewView' inclui um método para gerar marcação HTML para uma visualização com base nos dados fornecidos.
+
+Estrutura de código
+'PreviewView.js': contém a definição da classe 'PreviewView'.
+'PreviewView.spec.js': Contém o conjunto de testes Jasmine para a classe 'PreviewView'.
+
+:test/testcode/PNV.test.js
+
+Visão geral do código
+O código consiste em uma classe ‘PaginationView’ e um conjunto de testes Jasmine para testar sua funcionalidade. A classe 'PaginationView' inclui um método para renderizar botões de paginação.
+
+Estrutura de código
+'PaginationView.js': contém a definição da classe 'PaginationView'.
+'PaginationView.spec.js': Contém o conjunto de testes Jasmine para a classe 'PaginationView'.
+
+:test/testcode/integration.test.js
+
+Visão geral do código
+O código contém um teste Cypress escrito usando a estrutura de testes Cypress. Especifica uma série de ações para interagir com a página HTML e asserções para verificar o comportamento esperado.
+
+Estrutura de código
+'integration-test.js': Contém o teste de integração Cypress.
+Uso
+
+:test/testcode/model.test.js
+
+Visão geral do código
+O código do 'Módulo de Receita' consiste em um conjunto de funções e objetos usados para gerenciar e manipular dados relacionados a receitas. Inclui funções para criar objetos de receita, carregar receitas e resultados de pesquisa, atualizar porções, adicionar e excluir marcadores e fazer upload de novas receitas. Além disso, fornece funções para inicializar e limpar marcadores no armazenamento local.
+
+Estrutura de código
+'yourRecipeModule.js': contém as funções e objetos do 'Recipe Module'.
+'yourRecipeModule.spec.js': Contém o conjunto de testes Jasmine para testar as funções e objetos no 'Recipe Module'.
+
+: test/testcode/helper.test.js
+
+Visão geral do código
+O código 'Função AJAX' inclui funções para fazer solicitações HTTP usando a API fetch. Ele foi testado quanto à sua capacidade de lidar com diferentes cenários de resposta, incluindo sucesso, tempo limite e erros de rede.
+
+Estrutura de código
+'Função AJAX': O código usa a função de busca global para fazer solicitações HTTP e retornar os dados de resposta. A função de busca é fornecida pelo ambiente global do navegador.
+
+'AJAX Function.spec.js': Contém o conjunto de testes Jasmine para testar a 'Função AJAX'
+
+: test/testcode/controler.test.js
+
+Visão geral do código
+O código 'Funções do controlador e manipuladores de eventos' inclui funções e manipuladores de eventos que controlam vários aspectos do aplicativo. Ele aproveita o modelo para gerenciamento de dados e interage com diferentes visualizações para atualizar a IU. O código é testado para garantir que as funções do controlador funcionem corretamente.
+
+Estrutura de código
+'modelo': O 'modelo' contém dados e funções para gerenciamento de dados.
+'config': Constantes de configuração utilizadas na aplicação.
+'views': Views responsáveis por renderizar e interagir com a UI.
+'Controller Functions and Event Handlers.spec.js': Contém o conjunto de testes Jasmine para testar as funções do controlador e manipuladores de eventos.
+
+: test/testcode/BMV.test.js
+
+Visão geral do código
+O código ‘BookmarksView’ é responsável por renderizar uma lista de marcadores na interface do usuário. Ele usa os dados fornecidos e renderiza os marcadores como uma lista. O código aproveita o previewView para renderizar itens de favoritos individuais.
+
+Estrutura de código
+'BookmarksView': A classe 'BookmarksView' fornece funções para renderizar marcadores e itens de marcadores individuais usando o previewView.
+
+'previewView': O módulo 'previewView' é usado para renderizar itens de favoritos individuais.
+
+'BookmarksView.spec.js': Contém o conjunto de testes Jasmine para testar o código 'BookmarksView'.
+
+: test/testcode/ARV.test.js
+
+Visão geral do código
+O código ‘AddRecipeView’ é responsável por gerenciar os elementos da interface do usuário usados para adicionar uma nova receita. Inclui funções para exibir e ocultar a janela de adição de receita e para lidar com o envio do formulário para adicionar uma receita.
+
+Estrutura de código
+'AddRecipeView': A classe 'AddRecipeView' fornece funções para alternar a janela para adicionar uma receita e adicionar um manipulador de upload para o formulário.
+
+'AddRecipeView.spec.js': Contém o conjunto de testes Jasmine para testar o código 'AddRecipeView'.
+
+
