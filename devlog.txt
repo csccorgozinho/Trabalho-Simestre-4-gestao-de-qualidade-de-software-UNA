@@ -10,7 +10,7 @@ objetivo de desenvolvimento: o app deve funcionar em um aabiante de testes.
 
 funcionalidade : esse app foi criado para mostrar receitas de difersos pratos.
 
-testes:53 foram realisados dom 51 bem succedidos e 2 falhas
+testes:53 testes foram realisados com 51 bem succedidos e 2 falhas
 
 eficencia de programação : 30 dia de desenvolvimento resulta em 97 linhas por dia.
 
