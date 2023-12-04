@@ -11,7 +11,7 @@
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-# Recipe App(n e nome final)
+# Recipe App
 
 # Sobre
 O Recipe App é um aplicativo fácil de usar e versátil projetado para ajudá-lo a descobrir, organizar e criar suas receitas favoritas. Seja você um cozinheiro amador ou um chef experiente, este aplicativo é o companheiro perfeito para todas as suas aventuras culinárias.
@@ -32,8 +32,6 @@ Faça upload de fotos e adicione notas pessoais às suas receitas.
 Categorize as receitas em coleções para facilitar o acesso.
 
 # testes
-
-Conectar na api
 
 Procure receitas: explore o catálogo de receitas por cozinha, preferências alimentares ou ingredientes.
 
