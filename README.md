@@ -20,6 +20,8 @@ O Recipe App é um aplicativo fácil de usar e versátil projetado para ajudá-l
 
 -Organizar: crie e gerencie sua própria coleção de receitas, completa com fotos e notas.
 
+link: https://drive.google.com/file/d/1nNoe6LSGKx7_k-IX0jXaq1GXWyahi6GR/view?usp=sharing
+
 # Características
 -Descoberta de receitas
 Navegue por uma seleção diversificada de receitas com base na culinária, restrições alimentares e ingredientes.
