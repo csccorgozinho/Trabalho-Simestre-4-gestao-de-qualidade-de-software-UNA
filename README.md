@@ -11,10 +11,10 @@
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-# Recipe App
+# Forkify App
 
 # Sobre
-O Recipe App é um aplicativo fácil de usar e versátil projetado para ajudá-lo a descobrir, organizar e criar suas receitas favoritas. Seja você um cozinheiro amador ou um chef experiente, este aplicativo é o companheiro perfeito para todas as suas aventuras culinárias.
+O Forkify App é um aplicativo fácil de usar e versátil projetado para ajudá-lo a descobrir, organizar e criar suas receitas favoritas. Seja você um cozinheiro amador ou um chef experiente, este aplicativo é o companheiro perfeito para todas as suas aventuras culinárias.
 
 -Descobrir: Explore uma vasta coleção de receitas deliciosas de diversas cozinhas e preferências alimentares.
 
